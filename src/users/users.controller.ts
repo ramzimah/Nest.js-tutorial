@@ -8,12 +8,15 @@ import {
   Query,
   Delete,
   NotFoundException,
+  UseInterceptors,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { createUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
-
+import { userDto } from './dtos/user.dto';
+import { Serialize } from 'src/interceptors/serialize.interceptor';
 @Controller('users')
+@Serialize(userDto)
 export class UsersController {
   constructor(public usersService: UsersService) {}
   @Post('/auth')
