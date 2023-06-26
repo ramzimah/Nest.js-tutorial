@@ -20,7 +20,7 @@ import { AuthService } from './auth.service';
 import { CurrentUser } from './decorators/current-user.decorator';
 import { User } from './users.entity';
 import { AuthGuard } from '../guards/auth.guard';
-AuthGuard;
+
 @Controller('auth')
 @Serialize(UserDto)
 export class UsersController {
