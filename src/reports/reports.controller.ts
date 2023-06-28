@@ -41,7 +41,6 @@ export class ReportsController {
     return this.reportService.changeApproval(id, approveReportDto.approved);
   }
   @Get()
-  @UseGuards(AdminGuard)
   async getEstimate(@Query() query: GetEstimateDto) {
     return this.reportService.getEstimate(query);
   }
