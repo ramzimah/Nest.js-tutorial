@@ -1,7 +1,10 @@
 import { Expose, Transform } from 'class-transformer';
-import { User } from 'src/users/users.entity';
 
 export class ReportDto {
+  @Expose()
+  id: number;
+  @Expose()
+  approved: boolean;
   @Expose()
   make: string;
   @Expose()
